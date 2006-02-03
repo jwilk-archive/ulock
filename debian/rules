@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+
+.PHONY: build
+build:
+	$(MAKE)
+
+.PHONY: clean
+clean:
+	$(MAKE) clean
+	dh_clean
+
+.PHONY: binary-indep
+binary-indep:
+
+.PHONY: binary-arch
+binary-arch: build
+	dh_clean -k
+	dh_install
+	dh_installchangelogs
+	dh_installdocs
+	dh_installpam
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	chown root.shadow $(CURDIR)/debian/ulock/usr/bin/ulock
+	chmod 2755 $(CURDIR)/debian/ulock/usr/bin/ulock
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+.PHONY: binary
+binary: binary-indep binary-arch
