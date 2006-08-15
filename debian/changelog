@@ -1,3 +1,9 @@
+ulock (0.1a-3) unstable; urgency=low
+
+  * Include a manual page. 
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Tue, 15 Aug 2006 21:00:29 +0200
+
 ulock (0.1a-2) unstable; urgency=low
 
   * New description.

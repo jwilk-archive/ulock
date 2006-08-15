@@ -2,12 +2,13 @@ Source: ulock
 Section: utils
 Priority: optional
 Maintainer: Jakub Wilk <ubanus@users.sf.net>
-Build-Depends: debhelper (>= 4.0.0), libpam0g-dev
-Standards-Version: 3.6.2
+Build-Depends: debhelper (>= 5), libpam0g-dev, xsltproc, docbook-xml
+Standards-Version: 3.7.2
+Bugs: mailto:ubanus@users.sf.net
 
 Package: ulock
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, libpam-modules
 Description: Virtual console locking program
  ulock locks the entire virtual console system, completely disabling all
  console access. It gives up these locks when either the password of

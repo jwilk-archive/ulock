@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.1.2//EN' 'http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd' 
+[
+	<!ENTITY p 'ulock'>
+	<!ENTITY jw '<firstname>Jakub</firstname> <surname>Wilk</surname>'>
+]>
+
+<refentry>
+
+<refentryinfo>
+	<title>&p; manual</title>
+	<productname>&p;</productname>
+	<author>
+		&jw;
+		<affiliation>
+			<address>
+				<email>ubanus@users.sf.net</email>
+			</address>
+		</affiliation>
+	</author>
+	<copyright>
+		<year>2006</year>
+		<holder>&jw;</holder>
+	</copyright>
+	<date>2006-08-15</date>
+</refentryinfo>
+
+<refmeta>
+	<refentrytitle>&p;</refentrytitle>
+	<manvolnum>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+	<refname>&p;</refname>
+	<refpurpose>virtual console locking program</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+	<cmdsynopsis>
+		<command>&p;</command>
+		<arg><replaceable>command</replaceable></arg>
+	</cmdsynopsis>
+</refsynopsisdiv>
+<refsect1>
+	<title>DESCRIPTION</title>
+	<para>
+		&p; locks the entire virtual console system, completely disabling all
+		console access. It gives up these locks when either the password of
+		the user who started ulock or the root password is typed. &p; is able
+		to invoke any program (i.e. screen saver), which will be terminated on
+		any keystroke.
+	</para>
+</refsect1>
+
+<refsect1>
+	<title>OPTIONS</title>
+	<para>
+		&p; accepts the following options:
+	</para>
+
+	<variablelist>
+		<varlistentry>
+			<term><option><replaceable>command</replaceable></option></term>
+			<listitem>
+				<para>
+					A command to execute before prompting for a password.	
+				</para>
+			</listitem>
+		</varlistentry>
+	</variablelist>
+</refsect1>
+
+</refentry>
+
+<!-- vim:set ts=4 sw=4: -->
