@@ -1,5 +1,5 @@
 CFLAGS = -Os -W -Wall -std=gnu99
-LDFLAGS = -lpam -lpam_misc
+LDFLAGS = -lpam
 
 DB2MAN=/usr/share/sgml/docbook/stylesheet/xsl/nwalsh/manpages/docbook.xsl
 XSLTPROC=xsltproc --nonet
