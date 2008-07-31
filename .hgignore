@@ -1,0 +1,10 @@
+syntax: regexp
+^ulock
+^debian/ulock/
+^debian/files
+^debian/ulock[.]debhelper[.]log
+^debian/ulock[.]substvars
+
+syntax: glob
+*.1
+*.o
