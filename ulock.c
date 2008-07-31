@@ -1,5 +1,5 @@
-/* Copyright (c) 2006 Jakub Wilk <ubanus@users.sf.net>
- * Written on 1, 2 Feb 2006
+/* Copyright © 2006, 2007, 2008 Jakub Wilk <ubanus@users.sf.net>.
+ * Written on 1, 2 Feb 2006.
  */
 
 #ifndef _GNU_SOURCE
