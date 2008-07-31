@@ -1,3 +1,9 @@
+ulock (0.1a.5) unstable; urgency=low
+
+  * Repackage.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Thu, 31 Jul 2008 13:51:45 +0200
+
 ulock (0.1a.4) unstable; urgency=low
 
   * Include "common-auth" rather than "common.auth".
