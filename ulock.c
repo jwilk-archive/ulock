@@ -222,7 +222,7 @@ static int read_fd(int fd)
   char buffer[1 << 10];
   ssize_t size = read(fd, buffer, sizeof buffer);
   if (size > 0)
-    write(STDOUT_FILENO, buffer, size);
+    (void) write(STDOUT_FILENO, buffer, size);
   return size;
 }
 
@@ -381,7 +381,7 @@ int main(int argc, char **argv)
     if (ufds[0].revents)
     {
       char ch;
-      read(STDIN_FILENO, &ch, 1);
+      (void) read(STDIN_FILENO, &ch, 1);
       kill(child_pid, SIGINT);
       while (poll(ufds + 1, 1, 750) == 1)
         read_fd(ufds[1].fd);
