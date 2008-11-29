@@ -292,7 +292,7 @@ void check_password(void)
   pam_handle_t *pamh;
   char username[1 << 8];
   username[0] = '\0';
-  strncat(username, getpwuid(getuid())->pw_name, sizeof username);
+  strncat(username, getpwuid(getuid())->pw_name, (sizeof username) - 1);
   pam_start("ulock", username, &conv, &pamh);
   writes(STDOUT_FILENO, "The terminal is now locked. Please enter the password to unlock it.\n");
   char *username2 = username;
