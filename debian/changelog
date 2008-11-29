@@ -1,3 +1,9 @@
+ulock (0.2) unstable; urgency=low
+
+  * Cleanup.
+
+ -- Jakub Wilk <ubanus@users.sf.net>  Sat, 29 Nov 2008 23:43:21 +0100
+
 ulock (0.1a.5) unstable; urgency=low
 
   * Repackage.
