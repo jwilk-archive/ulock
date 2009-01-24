@@ -2,7 +2,7 @@
 <!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.5//EN' 'http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd' 
 [
 	<!ENTITY p 'ulock'>
-	<!ENTITY jw '<firstname>Jakub</firstname> <surname>Wilk</surname>'>
+	<!ENTITY jwilk '<firstname>Jakub</firstname> <surname>Wilk</surname>'>
 ]>
 
 <refentry>
@@ -11,20 +11,17 @@
 	<title>&p; manual</title>
 	<productname>&p;</productname>
 	<author>
-		&jw;
-		<affiliation>
-			<address>
-				<email>ubanus@users.sf.net</email>
-			</address>
-		</affiliation>
+		&jwlk;
+		<address>
+			<email>ubanus@users.sf.net</email>
+		</address>
 	</author>
 	<copyright>
 		<year>2006</year>
 		<year>2007</year>
 		<year>2008</year>
-		<holder>&jw;</holder>
+		<holder>&jwilk;</holder>
 	</copyright>
-	<date>2008-07-31</date>
 </refentryinfo>
 
 <refmeta>
