@@ -8,7 +8,7 @@ Bugs: mailto:ubanus@users.sf.net
 
 Package: ulock
 Architecture: any
-Depends: ${shlibs:Depends}, libpam-modules
+Depends: ${misc:Depends}, ${shlibs:Depends}, libpam-modules
 Description: Virtual console locking program
  ulock locks the entire virtual console system, completely disabling all
  console access. It gives up these locks when either the password of
