@@ -1,4 +1,4 @@
-/* Copyright © 2006, 2007, 2008 Jakub Wilk <ubanus@users.sf.net>.
+/* Copyright © 2006, 2007, 2008 Jakub Wilk <jwilk@jwilk.net>.
  * Written on 1, 2 Feb 2006.
  */
 

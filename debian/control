@@ -1,10 +1,10 @@
 Source: ulock
 Section: utils
 Priority: extra
-Maintainer: Jakub Wilk <ubanus@users.sf.net>
+Maintainer: Jakub Wilk <jwilk@jwilk.net>
 Build-Depends: debhelper (>= 7), libpam0g-dev, xsltproc, docbook-xsl, docbook-xml (>= 4.5)
 Standards-Version: 3.8.0
-Bugs: mailto:ubanus@users.sf.net
+Bugs: mailto:jwilk@jwilk.net
 
 Package: ulock
 Architecture: any
