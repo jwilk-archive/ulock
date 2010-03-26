@@ -13,7 +13,7 @@ ulock: ulock.o
 clean:
 	rm -f tags ulock *.o *.1
 
-ulock.1: ulock.xml
+doc/ulock.1: doc/ulock.xml
 	$(XSLTPROC) --output $(@) $(XSL) $(<)
 
 # vim:ts=4
