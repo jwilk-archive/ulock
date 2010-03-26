@@ -1,1 +1,0 @@
-ulock: setgid-binary usr/bin/ulock 2755 root/shadow
