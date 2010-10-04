@@ -1,5 +1,4 @@
 /* Copyright © 2006, 2007, 2008 Jakub Wilk <jwilk@jwilk.net>.
- * Written on 1, 2 Feb 2006.
  */
 
 #ifndef _GNU_SOURCE
