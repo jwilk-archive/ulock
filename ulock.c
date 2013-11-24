@@ -1,10 +1,11 @@
-/* Copyright © 2006, 2007, 2008 Jakub Wilk <jwilk@jwilk.net>.
+/* Copyright © 2006, 2007, 2008, 2013 Jakub Wilk <jwilk@jwilk.net>.
  */
 
 #ifndef _GNU_SOURCE
 #  define _GNU_SOURCE
 #endif
 
+#include <assert.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <poll.h>
@@ -197,6 +198,7 @@ static void invoke_command(char *command, char **argv, pid_t *child_pid, int *pt
       fatal("<child> Error while closing the master pseudo-terminal\n");
     if (setsid() == -1)
       fatal("<child> Error while creating a session\n");
+    assert(slavename != NULL);
     int pts = open(slavename, O_RDWR);
     if (pts == -1)
       fatal("<child> Error while opening the slave pseudo-terminal\n");
