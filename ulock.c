@@ -31,12 +31,12 @@
 static struct vt_mode old_vtm;
 static struct termios old_tattr;
 
-static ssize_t writes(int fd, const char *message) 
+static ssize_t writes(int fd, const char *message)
 {
   return write(fd, message, strlen(message));
 }
 
-static void fatal(char *message) 
+static void fatal(char *message)
 {
   writes(STDERR_FILENO, message);
   exit(EXIT_FAILURE);
@@ -60,7 +60,7 @@ static void init_tty(void)
     fatal("Error while setting the terminal mode.\n");
   atexit(restore_tty_mode);
 #endif
-  
+
   if (tcgetattr(STDIN_FILENO, &old_tattr) == -1)
     fatal("Error while getting the terminal attributes.\n");
   struct termios tattr = old_tattr;
@@ -88,13 +88,13 @@ static void init_pty(int fd, struct winsize *wsize, struct termios tattr)
 {
   if (ioctl(fd, TIOCSCTTY, 0) == -1)
     fatal("<child> Error while setting up the controlling terminal.\n");
-  
+
   for (int i = 0; i <= 2; i++)
     if (dup2(fd, i) == -1)
       fatal("<child> Error while duplicating file descriptors.\n");
   if (fd > 2)
     close(fd);
-  
+
   tattr.c_iflag = BRKINT | IGNPAR | ICRNL | IXON | IMAXBEL;
   tattr.c_oflag = OPOST | ONLCR;
   tattr.c_cflag = CS8 | CREAD;
@@ -130,7 +130,7 @@ static void signal_handler(int sig)
   {
   case SIGUSR1:
     ioctl(STDIN_FILENO, VT_RELDISP, 0);
-    break; 
+    break;
   case SIGUSR2:
     ioctl(STDIN_FILENO, VT_RELDISP, VT_ACKACQ);
     break;
@@ -152,7 +152,7 @@ static void setup_signals(void)
     if (sigaction(SIGUSR2, &sa, NULL) == -1 || sigdelset(&ss, SIGUSR2) == -1) break;
     if (sigprocmask(SIG_SETMASK, &ss, NULL) == -1) break;
     return;
-  } 
+  }
   while (false);
   fatal("Error while setting up singal handlers.\n");
 }
@@ -178,15 +178,15 @@ static void invoke_command(char *command, char **argv, pid_t *child_pid, int *pt
   char* slavename = open_ptm(ptm);
   if (slavename == NULL)
     fatal("Error while opening pseudo-terminal.\n");
-  
+
   struct winsize wsize;
   if (ioctl(STDIN_FILENO, TIOCGWINSZ, &wsize) == -1)
     fatal("Error while getting the terminal size.\n");
-  
+
   struct termios attr;
   if (tcgetattr(*ptm, &attr) == -1)
     fatal("Error while getting the pseudo-terminal attributes.\n");
-  
+
   switch (*child_pid = fork())
   {
   case -1:
@@ -203,7 +203,7 @@ static void invoke_command(char *command, char **argv, pid_t *child_pid, int *pt
     if (pts == -1)
       fatal("<child> Error while opening the slave pseudo-terminal\n");
     init_pty(pts, &wsize, attr);
-    
+
     child_setup_signals();
     execvp(command, argv);
     fatal("<child> Execution failed.\n");
@@ -215,7 +215,7 @@ static void invoke_command(char *command, char **argv, pid_t *child_pid, int *pt
 
 static void clear(void)
 {
-  writes(STDOUT_FILENO, "\033[0m\033[H\033[J"); 
+  writes(STDOUT_FILENO, "\033[0m\033[H\033[J");
 }
 
 static int read_fd(int fd)
@@ -238,10 +238,10 @@ static int ulock_conv(int num_msg, const struct pam_message **msgm, struct pam_r
   if (reply == NULL)
     return PAM_CONV_ERR;
 
-  for (int i = 0; i < num_msg; i++) 
+  for (int i = 0; i < num_msg; i++)
   {
     char *string = NULL;
-    switch (msgm[i]->msg_style) 
+    switch (msgm[i]->msg_style)
     {
     case PAM_PROMPT_ECHO_OFF:
     case PAM_PROMPT_ECHO_ON:
@@ -264,7 +264,7 @@ static int ulock_conv(int num_msg, const struct pam_message **msgm, struct pam_r
     default:
       goto fail;
     }
-    if (string != NULL) 
+    if (string != NULL)
     {
       reply[i].resp_retcode = 0;
       reply[i].resp = string;
@@ -275,9 +275,9 @@ static int ulock_conv(int num_msg, const struct pam_message **msgm, struct pam_r
   reply = NULL;
   return PAM_SUCCESS;
 fail:
-  if (reply != NULL) 
+  if (reply != NULL)
   for (int i = 0; i < num_msg; i++)
-    if (reply[i].resp != NULL) 
+    if (reply[i].resp != NULL)
       free(reply[i].resp);
   free(reply);
   return PAM_CONV_ERR;
@@ -285,7 +285,7 @@ fail:
 
 void check_password(void)
 {
-  static struct pam_conv conv = 
+  static struct pam_conv conv =
   {
     ulock_conv,
     NULL
@@ -324,7 +324,7 @@ void check_password(void)
     username2 = (username2 == username) ? "root" : username;
   }
   pam_end(pamh, PAM_SUCCESS);
-  fatal("Something went *SERIOUSLY* wrong\n"); 
+  fatal("Something went *SERIOUSLY* wrong\n");
 }
 
 static bool is_shadow_group(gid_t gid)
@@ -353,8 +353,8 @@ int main(int argc, char **argv)
   check_privileges();
   clear();
   init_tty();
-  setup_signals(); 
-  
+  setup_signals();
+
   struct pollfd ufds[2] =
   {
     { .fd = STDIN_FILENO, .events = POLLIN, .revents = 0 },

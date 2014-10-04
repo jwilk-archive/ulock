@@ -24,7 +24,7 @@ ulock (0.1a.4) unstable; urgency=low
 
 ulock (0.1a.3) unstable; urgency=low
 
-  * Include a manual page. 
+  * Include a manual page.
 
  -- Jakub Wilk <jwilk@jwilk.net>  Tue, 15 Aug 2006 21:00:29 +0200
 
