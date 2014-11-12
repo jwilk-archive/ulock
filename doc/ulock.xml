@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.5//EN' 'http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd' 
+<!DOCTYPE refentry PUBLIC '-//OASIS//DTD DocBook XML V4.5//EN' 'http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd'
 [
 	<!ENTITY p 'ulock'>
 	<!ENTITY jwilk '<firstname>Jakub</firstname> <surname>Wilk</surname>'>
@@ -63,7 +63,7 @@
 			<term><option><replaceable>command</replaceable></option></term>
 			<listitem>
 				<para>
-					A command to execute before prompting for a password.	
+					A command to execute before prompting for a password.
 				</para>
 			</listitem>
 		</varlistentry>
