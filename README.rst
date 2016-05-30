@@ -1,0 +1,8 @@
+This software is no longer developed. Please use vlock_ instead.
+
+ -- Jakub Wilk <jwilk@jwilk.net>  Mon, 04 Oct 2010 14:00:32 +0200
+
+.. _vlock:
+   http://cthulhu.c3d2.de/~toidinamai/vlock/vlock.html
+
+.. vim:ts=3 sts=3 sw=3
