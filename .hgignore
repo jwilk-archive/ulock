@@ -1,6 +1,0 @@
-syntax: regexp
-^ulock
-
-syntax: glob
-*.1
-*.o
