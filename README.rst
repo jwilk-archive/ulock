@@ -1,6 +1,7 @@
-This software is no longer developed. Please use vlock_ instead.
+.. warning::
 
- -- Jakub Wilk <jwilk@jwilk.net>  Mon, 04 Oct 2010 14:00:32 +0200
+   This software is no longer maintained.
+   Please use vlock_ instead.
 
 .. _vlock:
    http://cthulhu.c3d2.de/~toidinamai/vlock/vlock.html
