@@ -154,7 +154,7 @@ static void setup_signals(void)
     return;
   }
   while (false);
-  fatal("Error while setting up singal handlers.\n");
+  fatal("Error while setting up signal handlers.\n");
 }
 
 static void child_setup_signals(void)
@@ -170,7 +170,7 @@ static void child_setup_signals(void)
     return;
   }
   while (false);
-  fatal("<child> Error while setting up singal handlers.\n");
+  fatal("<child> Error while setting up signal handlers.\n");
 }
 
 static void invoke_command(char *command, char **argv, pid_t *child_pid, int *ptm)
